@@ -47,7 +47,41 @@ class IndividualPage extends React.Component {
                 <p>
                     <Link to="/login">Logout</Link>
                 </p>
+                <div className="row">
+                    <div className="column">
+                        <h2>Register SSN</h2>
+                        <form>
+                            <div className="form-group">
+                                <label htmlFor="usr">SSN:</label>
+                                <input type="text" className="form-control" id="usr" />
+                            </div>
 
+                        </form>
+                        <div className="container">
+                            <button type="button" className="btn btn-primary btn-md">Register</button>
+                        </div>
+                    </div>
+                    <div className="column" >
+                        <h2>Merchant Register</h2>
+                        <form>
+                            <div className="form-group">
+                                <label htmlFor="usr">Name/ID:</label>
+                                <input type="text" className="form-control" id="usr"/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="pwd">TTL:</label>
+                                <input type="password" className="form-control" id="pwd"/>
+                            </div>
+                        </form>
+                        <div className="container">
+                            <button type="button" className="btn btn-primary btn-md">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div className="alert alert-success alert-dismissible">
+                    <a href="#" className="close" data-dismiss="alert" aria-label="close"></a>
+                    <strong>Data 1:</strong> hjjhvjhvhjv
+                </div>
             </div>
         );
     }
