@@ -11,14 +11,17 @@ export function configureFakeBackend() {
                 // authenticate
                 if (url.endsWith('/users/authenticate') && opts.method === 'POST') {
                     // get parameters from post request
-                    console.log(opts.body)
+                    //console.log(opts.body)
+                    let user = JSON.parse(opts.body);
+                    console.log(user);
                     $.ajax({
                         type: 'POST',
                         url: 'http://localhost:8080/login',
                         contentType: 'application/json',
                         data: opts.body,
                         success: function () {
-                            resolve({ ok: true, json: () => opts.body });
+                            user.token= 'fake-jwt-token'
+                            resolve({ ok: true, json: () => user });
                         }.bind(this),
                         error: function () {
                             reject('Unauthorised');
